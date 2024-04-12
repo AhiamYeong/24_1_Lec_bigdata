@@ -1,0 +1,154 @@
+<!-- 240412 빅데이터분석론_frontend 과제
+1. 형식(틀) 먼저 만들기
+2. bootstrap css 연결
+3. js 연결 -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Math Duel Game</title>
+    <link rel="stylesheet" type="text/css" href="lib/bootstrap-5.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="lib/fontawesome-free-6.5.2-web/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+    <script src="lib/jquery-3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="lib/bootstrap-5.1.3/js/bootstrap.min.js"></script>
+    <script src="lib/fontawesome-free-6.5.2-web/js/all.min.js"></script>
+    <script src="./demo.js"></script>
+
+
+    <style>
+        #equation { background-color: #FFFF99; }
+        #player1Calculator .btn { margin: 5px; }
+        #player2Calculator .btn { margin: 5px; }
+    </style>
+</head>
+
+<body> 
+    <div class="container-fluid"> 
+        <!-- Navbar --> 
+        <div id="navbar"> 
+            <ul class="nav nav-pills"> 
+                <li class="nav-item"> 
+                    <a class="nav-link active" aria-current="page" href="#"> 
+                        <i class="fa-solid fa-meteor"></i> 
+                        <span>Start</span> 
+                    </a> 
+                </li> 
+                <li class="nav-item"> 
+                    <a class="nav-link" href="#"> 
+                        <i class="fa-solid fa-flag"></i> 
+                        <span>New Game</span> 
+                    </a> 
+                </li> 
+            </ul> 
+        </div> 
+    </div>
+        <!-- Main Content --> 
+    <div class="col-md-9"> 
+        <div class="row mb-3"> 
+            <div class="col text-center"> 
+                <h2 id="equation"><span id="op1">5</span> <span id="operator">+</span> <span id="op2">7</span> = ?</h2> 
+            </div> 
+            <div class="text-center" id="current-player-display"> 
+                <span>Player 1</span> is playing. 
+            </div> 
+        </div> 
+        <div class="row"> 
+
+            <!-- Player 1 --> 
+            <div class="col-md-6"> 
+                <div class="card"> 
+                    <div class="card-header text-center current-player" id="player1-card-header">Player1</div> 
+                    <!-- card body --> 
+                    <div class="card-body"> 
+                        <!-- Lives -->
+                        <div id="player1Lives" class="lives d-flex justify-content-end"> 
+                            <div class="heart"><i class="fa-solid fa-heart"></i></div> 
+                            <div class="heart"><i class="fa-solid fa-heart"></i></div> 
+                            <div class="heart"><i class="fa-solid fa-heart"></i></div> 
+                        </div> 
+                        <!-- Input -->
+                        <div class="input-group player1Input mb-3">
+                            <span class="input-group-text" id="basic-addon1">P1</span>
+                            <input type="text" class="form-control" placeholder="0">
+                        </div> 
+                        <!-- Calculator Button -->
+                        <div id="player1Calculator" class="calculator">
+                            <div class="row">
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">1</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">2</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">3</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">4</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">5</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">6</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">7</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">8</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">9</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">0</button></div>
+                                <div class="col"><button type="button" class="btn btn-success">Enter</button></div>
+                            </div>
+                        </div>
+
+                    </div> 
+                </div> 
+            </div> 
+
+            <!-- Player 2 --> 
+            <div class="col-md-6"> 
+                <div class="card"> 
+                    <div class="card-header text-center" id="player2-card-header">Player 2</div> 
+                    <!-- card body --> 
+                    <div class="card-body"> 
+                        <!-- Lives -->
+                        <div id="player2Lives" class="lives d-flex justify-content-end"> 
+                            <div class="heart"><i class="fa-solid fa-heart"></i></div> 
+                            <div class="heart"><i class="fa-solid fa-heart"></i></div> 
+                            <div class="heart"><i class="fa-solid fa-heart"></i></div> 
+                        </div> 
+                        <!-- Input -->
+                        <div class="input-group player2Input mb-3">
+                            <span class="input-group-text" id="basic-addon1">P1</span>
+                            <input type="text" class="form-control" placeholder="0">
+                        </div> 
+                        <!-- Calculator Button -->
+                        <div id="player2Calculator" class="calculator">
+                            <div class="row">
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">1</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">2</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">3</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">4</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">5</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">6</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">7</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">8</button></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">9</button></div>
+                            </div>
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col"><button type="button" class="btn btn-outline-secondary">0</button></div>
+                                <div class="col"><button type="button" class="btn btn-success">Enter</button></div>
+                            </div>
+                        </div>
+                    </div> 
+                </div> 
+            </div> 
+        </div> 
+    </div> 
+
+</body>
+</html>
