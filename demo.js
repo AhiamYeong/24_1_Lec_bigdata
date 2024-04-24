@@ -176,6 +176,8 @@ function updateInputDisplay() {
     
 }  
 
+// disableinput, enableinput을 css 클래스 이용하여 작성
+// flag를 걸어서 충분히 이용 가능?
 function disableInput(player) {
     let body = document.querySelector(`#${player}Card`);
     let elements = body.querySelectorAll("*");
