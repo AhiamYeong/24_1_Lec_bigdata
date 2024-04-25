@@ -179,9 +179,13 @@ function updateInputDisplay() {
 // disableinput, enableinput을 css 클래스 이용하여 작성
 // flag를 걸어서 충분히 이용 가능?
 function disableInput(player) {
-    let body = document.querySelector(`#${player}Card`);
+  // card body 이름 변경하기 (element 이름 쓰면 안됨!)
+    let body = document.querySelector(`#${player}Card`); 
+    // element 선언 방식도 별로 좋지 못함
     let elements = body.querySelectorAll("*");
+    // 안 쓰는 변수는 과감히 삭제할 것
     let cardHeader = document.querySelector(`#${player}-card-header`); 
+    // element를 변경하는 것 -> css class로 한 번에 모을 것
     elements.forEach(function(element) {
         element.disabled = true;
         element.style.backgroundColor = '#626567';
